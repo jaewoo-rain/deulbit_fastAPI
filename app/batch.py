@@ -89,10 +89,16 @@ async def generate_audio(requests: List[TTSRequest]):
         for chunk in temp_contents:
             outf.write(chunk)
 
-    return JSONResponse([{
-        "path": out_dir,
-        "combined": combined_name
-    }])
+    # return JSONResponse([{
+    #     "path": out_dir,
+    #     "combined": combined_name
+    # }])
+
+    return FileResponse(
+        path=combined_path,
+        media_type="audio/mp3",
+        filename=combined_name
+    )
 
 
 @app.post("/download-audio")

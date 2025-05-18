@@ -31,7 +31,7 @@ async def generate_audio(requests: List[TTSRequest]):
         "vibePrompt": "...",
         "fileName": "batch1"
       },
-      {
+      { 
         "script": "...",
         "voice": "volle",
         "vibeKey": "Exten",
